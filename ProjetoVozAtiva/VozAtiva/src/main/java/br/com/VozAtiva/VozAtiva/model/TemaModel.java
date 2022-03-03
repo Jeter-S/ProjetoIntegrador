@@ -33,13 +33,7 @@ public class TemaModel {
 	@Size(min = 3, max = 255)
 	private String tag;
 	
-	public String getTag() {
-		return tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
+	
 
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
@@ -77,5 +71,12 @@ public class TemaModel {
 		this.tipo = tipo;
 	}
 
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
 
 }
