@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -22,13 +23,14 @@ public class UsuarioModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotBlank
+	
 	@Size(min = 3, max = 255)
 	private String nomeCompleto;
 	
-	@NotBlank
-	@Size(min = 3, max = 255)
-	private String email;
+	
+    @Email(message = "O atributo Usuário deve ser um email válido!")
+	@Size(min = 5)
+    private String usuario;
 	
 	@NotBlank
 	@Size(min = 8, max = 255)
@@ -37,7 +39,7 @@ public class UsuarioModel {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<PostagemModel> postagem;
-	
+
 	public long getId() {
 		return id;
 	}
@@ -54,12 +56,12 @@ public class UsuarioModel {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {
@@ -69,4 +71,14 @@ public class UsuarioModel {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public List<PostagemModel> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<PostagemModel> postagem) {
+		this.postagem = postagem;
+	}
+	
+	
 }

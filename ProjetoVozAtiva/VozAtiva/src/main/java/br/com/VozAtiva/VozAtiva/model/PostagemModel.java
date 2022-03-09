@@ -94,7 +94,7 @@ public class PostagemModel {
 	public void setTema(TemaModel tema) {
 		this.tema = tema;
 	}
-	
+
 	public String getImagem() {
 		return imagem;
 	}
@@ -102,4 +102,6 @@ public class PostagemModel {
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
+
+	
 }
