@@ -23,11 +23,11 @@ public class SwaggerConfig {
                 .info(new Info().title("Projeto Voz Ativa").description("Projeto Voz Ativa - Generation Brasil")
                         .version("v0.0.1").license(new License().name("Voz Ativa").url("https://VozAtiva.com.br"))
                         .contact(new Contact().name("Equipe ASJPPI")
-                        .url("https://github.com/Brisola2021")
+                        .url("https://github.com/Jeter-S")
                         .email("VozAtiva@gmail.com")))
                 .externalDocs(new ExternalDocumentation()
                         .description("Github")
-                        .url("https://github.com/Brisola2021"));
+                        .url("https://github.com/Jeter-S"));
 
     }
     @Bean
